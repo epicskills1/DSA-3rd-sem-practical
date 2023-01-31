@@ -1,0 +1,62 @@
+void insertion_At_begin (int data)      // insertion function used for node to put in beginning of circular linked list
+{
+  struct node *new_node, *cur_Node;
+  if (headpt == NULL)
+    {
+      printf ("The List is empty");
+    }
+  else
+    {
+      new_node = (struct node *) malloc (sizeof (struct node));
+      new_node->data = data;
+      new_node->nextpt = headpt;
+      cur_Node = headpt;
+      while (cur_Node->nextpt != headpt)
+	{
+	  cur_Node = cur_Node->nextpt;
+	}
+      cur_Node->nextpt = new_node;
+      headpt = new_node;
+    }
+}
+
+void insertAtEnd(int num1) //the function which adds last node
+{
+  struct node *e;
+  int p;
+  p=num1;
+  struct node *extra=(struct node*)malloc(sizeof(struct node));
+  extra->data=p;
+  e=headpt;
+  while(e->nextpt!=headpt)
+  {
+   e=e->nextpt;
+  }
+  e->nextpt=extra;
+  extra->nextpt=headpt;
+}
+
+void insert_At_Any_Node (int data, int pos) //function for insertion at user required position
+{
+  struct node *new_node, *cur_Node;
+  int i;
+
+  if (headpt == NULL)
+    {
+      printf ("List is empty");
+    }
+  else if (pos == 1)
+    {
+      insertion_At_begin (data);
+    }
+  else
+    {
+      new_node = (struct node *) malloc (sizeof (struct node));
+      new_node->data = data;
+      cur_Node = headpt;
+      for (i = 2; i nextpt;
+	}
+      new_node->nextpt = cur_Node->nextpt;
+      cur_Node->nextpt = new_node;
+    }
+}
