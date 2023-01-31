@@ -1,0 +1,13 @@
+void insertLast(struct Node** head, int data){
+
+    struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
+
+    newNode->data = data;
+    newNode->next = NULL;
+
+    //need this if there is no node present in linked list at all
+    if(*head==NULL){
+        *head = newNode;
+        newNode->prev = NULL;
+        return;
+    }
